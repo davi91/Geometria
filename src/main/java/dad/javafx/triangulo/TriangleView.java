@@ -1,5 +1,6 @@
-package dad.javafx.rectangulo;
+package dad.javafx.triangulo;
 
+import dad.javafx.shapes.Triangle;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -8,32 +9,30 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class RectangleView extends GridPane {
+public class TriangleView extends GridPane {
 
-	private TextField widthTxt, heightTxt;
+	private TextField baseTxt, heightTxt;
 	private Label areaTxt, perimeterTxt;
-	private Label widthLbl, heightLbl;
+	private Label baseLbl, heightLbl;
 	private Label areaLbl, perimeterLbl;
-	private Rectangle rectangleShape;
+	private Triangle triangleShape;
 	
-	public RectangleView() {
+	public TriangleView() {
 				
-		widthLbl = new Label("Ancho:");
-		heightLbl = new Label("Alto:");
+		baseLbl = new Label("Base:");
+		heightLbl = new Label("Altura:");
 		
-		widthTxt = new TextField();
-		widthTxt.setPromptText("Ancho");
-		widthTxt.setPrefColumnCount(5);
+		baseTxt = new TextField();
+		baseTxt.setPromptText("Base");
+		baseTxt.setPrefColumnCount(5);
 		heightTxt = new TextField();
-		heightTxt.setPromptText("Alto");
+		heightTxt.setPromptText("Altura");
 		heightTxt.setPrefColumnCount(5);
 		
-		rectangleShape = new Rectangle();
-		rectangleShape.setWidth(80);
-		rectangleShape.setHeight(60);
-		rectangleShape.setFill(Color.rgb(0, 162, 232));
-		rectangleShape.setStrokeWidth(2);
-		rectangleShape.setStroke(Color.BLACK);
+		triangleShape = new Triangle(80,60);
+		triangleShape.setFill(Color.GREEN);
+		triangleShape.setStrokeWidth(2);
+		triangleShape.setStroke(Color.BLACK);	
 		
 		areaLbl = new Label("Area:");
 		perimeterLbl = new Label("Perímetro:");
@@ -41,12 +40,12 @@ public class RectangleView extends GridPane {
 		areaTxt = new Label();
 		perimeterTxt = new Label();
 
-		addRow(0, widthLbl, widthTxt);
+		addRow(0, baseLbl, baseTxt);
 		addRow(1, heightLbl, heightTxt);
-		addRow(2, rectangleShape);
+		addRow(2, triangleShape);
 		
-		setColumnSpan(rectangleShape, 2);
-		setHalignment(rectangleShape, HPos.CENTER);
+		setColumnSpan(triangleShape, 2);
+		setHalignment(triangleShape, HPos.CENTER);
 		
 		addRow(3, areaLbl, areaTxt);
 		addRow(4, perimeterLbl, perimeterTxt);
@@ -56,8 +55,8 @@ public class RectangleView extends GridPane {
 		setVgap(5);
 	}
 
-	public TextField getWidthTxt() {
-		return widthTxt;
+	public TextField getBaseTxt() {
+		return baseTxt;
 	}
 
 	public TextField getHeightTxt() {
@@ -72,7 +71,8 @@ public class RectangleView extends GridPane {
 		return perimeterTxt;
 	}
 
-	public Rectangle getRectangleShape() {
-		return rectangleShape;
+	public Triangle getTriangleShape() {
+		return triangleShape;
 	}
+
 }

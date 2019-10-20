@@ -11,12 +11,12 @@ public class Triangle extends Polygon {
 	
 	public Triangle(double base, double height) {
 		super();
+		 
+		this.base.addListener((o, ov, nv) ->createPoints());
+		this.height.addListener((o, ov, nv) ->createPoints());
 		
 		this.base.set(base);
 		this.height.set(height);
-		
-		this.base.addListener((o, ov, nv) ->createPoints());
-		this.height.addListener((o, ov, nv) ->createPoints());
 	}
 	
 	public Triangle() {

@@ -1,27 +1,27 @@
-package dad.javafx.rectangulo;
+package dad.javafx.triangulo;
 
 import javafx.beans.binding.Bindings;
 import javafx.util.converter.NumberStringConverter;
 
-public class RectangleController {
+public class TriangleController {
 
-	private RectangleModel model;
-	private RectangleView view;
+	private TriangleModel model;
+	private TriangleView view;
 	
-	public RectangleController() {
+	public TriangleController() {
 		
-		model = new RectangleModel();
-		view = new RectangleView();
+		model = new TriangleModel();
+		view = new TriangleView();
 		
 		// Usamos bind bidireccionales para transformar el texto en un número que el modelo pueda interpretar
-		view.getWidthTxt().textProperty().bindBidirectional(model.widthProperty(), new NumberStringConverter());
+		view.getBaseTxt().textProperty().bindBidirectional(model.baseProperty(), new NumberStringConverter());
 		view.getHeightTxt().textProperty().bindBidirectional(model.heightProperty(), new NumberStringConverter());
 		
 		view.getAreaTxt().textProperty().bind(Bindings.selectString(model.areaProperty()));
 		view.getPerimeterTxt().textProperty().bind(Bindings.selectString(model.perimeterProperty()));
 	}
 	
-	public RectangleView getRoot() {
+	public TriangleView getRoot() {
 		return view;
 	}
 }
