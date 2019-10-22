@@ -1,20 +1,14 @@
 package dad.javafx.main;
 
 import dad.javafx.circulo.CircleController;
+import dad.javafx.hexagono.HexagonController;
 import dad.javafx.rectangulo.RectangleController;
-import dad.javafx.shapes.Polyhedron;
-import dad.javafx.shapes.Triangle;
 import dad.javafx.triangulo.TriangleController;
 import javafx.application.Application;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TabPane.TabClosingPolicy;
-import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class GeometriaApp extends Application {
@@ -22,12 +16,15 @@ public class GeometriaApp extends Application {
 	private RectangleController rectangleController;
 	private CircleController circleController;
 	private TriangleController triangleController;
+	private HexagonController hexagonController;
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
 		rectangleController = new RectangleController();
 		circleController = new CircleController();
 		triangleController = new TriangleController();
+		hexagonController = new HexagonController();
 		
 		TabPane root = new TabPane();
 		root.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE); // Para evitar que se cierren
@@ -42,6 +39,7 @@ public class GeometriaApp extends Application {
 		tab3.setContent(triangleController.getRoot());
 		
 		Tab tab4 = new Tab("Hexágono");
+		tab4.setContent(hexagonController.getRoot());
 		
 		root.getTabs().addAll(tab1, tab2, tab3, tab4);
 		
