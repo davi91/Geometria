@@ -17,7 +17,8 @@ public class RectangleView extends GridPane {
 	private Rectangle rectangleShape;
 	
 	public RectangleView() {
-				
+		super();
+		
 		widthLbl = new Label("Ancho:");
 		heightLbl = new Label("Alto:");
 		

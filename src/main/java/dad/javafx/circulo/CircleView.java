@@ -17,7 +17,8 @@ public class CircleView extends GridPane {
 	private Circle circleShape;
 	
 	public CircleView() {
-				
+		super();
+		
 		radiusLbl = new Label("Radio:");
 		
 		radiusTxt = new TextField();

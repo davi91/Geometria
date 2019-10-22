@@ -17,7 +17,8 @@ public class TriangleView extends GridPane {
 	private Triangle triangleShape;
 	
 	public TriangleView() {
-				
+		super();
+		
 		baseLbl = new Label("Base:");
 		heightLbl = new Label("Altura:");
 		

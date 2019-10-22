@@ -17,7 +17,7 @@ public class HexagonView extends GridPane {
 	private Polyhedron hexagonShape;
 	
 	public HexagonView() {
-				
+		super();
 		radiusLbl = new Label("Radio:");
 		
 		radiusTxt = new TextField();
